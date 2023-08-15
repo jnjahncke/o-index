@@ -42,7 +42,7 @@ The O index is calculated by  summing the total instances of openness, and  divi
 ## Special Cosiderations:
 * Many people go thorugh the process of changing their first/last names thoughout their career. To address this, our application includes an option to search two names, and make an o-index out of papers from both those names. 
 
-* if you are running the code locally, you will have to input your own api key. This will allow you to be identified by NCBI servers.
+* if you are running the code locally, you will have to input your own api key. This will allow you to be identified by NCBI servers. Users can obtain an API key now from the Settings page of their NCBI account (to create an account, visit http://www.ncbi.nlm.nih.gov/account/).
 
 ## Disclaimers:
 
