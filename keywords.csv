@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-keywords
->>>>>>> 1821c9e46721952ab9dfe6ddac81f269e00aaf6c
 keyword,category,pre-string,category_description
 data is publicly available,1,1,data_shared
 data are publicly available,1,1,data_shared
@@ -73,8 +69,4 @@ pre-registration,7,1,preregistration
 preregistration,7,1,preregistration
 we pre-registered,7,1,preregistration
 we preregistered,7,1,preregistration
-<<<<<<< HEAD
 osf.io,8,1,OSF_exploratory
-=======
-osf.io,8,1,OSF_exploratory
->>>>>>> 1821c9e46721952ab9dfe6ddac81f269e00aaf6c
