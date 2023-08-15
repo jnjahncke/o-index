@@ -1,0 +1,11 @@
+Brainstorming notes: 
+
+- Best to start with the PubMed CSV which contains: 
+    -PMID
+    -Journal 
+    -ISN #
+    -Year
+    -ESN#
+    -PMCID
+ - then we can use the PMCID to loop through articles using the package beautiful soup
+ 
