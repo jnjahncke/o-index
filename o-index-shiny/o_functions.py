@@ -1,4 +1,4 @@
-#!usr/bin/env python
+#!/usr/bin/env python
 
 import numpy as np
 import pandas as pd
@@ -28,7 +28,7 @@ def get_pmids_open(author):
     if len(author) > 1:
         aname = author[0]
         for name in author[1:]:
-            aname += "%" + name
+            aname += "+" + name
     else:
         aname = author[0]
         
@@ -115,3 +115,10 @@ def get_openness(author, api):
                     break
     
     return o_idx_df
+
+def main():
+
+    print(get_openness("jennifer jahncke", "apikey.txt"))
+
+if __name__ == '__main__':
+    main()
