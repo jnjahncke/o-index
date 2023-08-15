@@ -3,16 +3,18 @@ This project started in Neurohackademy, Seattle in August 2023 (http://neurohack
 
 * An o-index is a comrehensive rating of how open a scientist is. This mimics the h-index, but weights the scientist on if they have open source articles, share code, etc.
 
-## Contributors (ABC order):
+# Contributors (ABC order):
 * Jennifer Jahncke 
 * Emily Lecy  
 * Tania Miramontes  
 * Emily Pickup  
 
-# STEP 1: Find all papers contributed to by an author of interest
+# The process behind creating the O-index
+
+## STEP 1: Find all papers contributed to by an author of interest
 We start by placing an authors name into our application. This will then search said name on pubmed. The pubmed page for the author is then scraped for the PMIDs of each paper that they have contributed to.
 
-# STEP 2: Classify text to find markers of openness  
+## STEP 2: Classify text to find markers of openness  
 Each paper an author is listed under is then scraped to determine how open source the paper is. Each paper is scraped for the following catagories:
 
    ** data shared : is the data publically available 
@@ -24,7 +26,7 @@ Each paper an author is listed under is then scraped to determine how open sourc
    
 If a predefined phrase for each catagory (see keywords.csv) is seen in the text, the catagory is given a binary value of 1.
    
-# STEP 3: Calculate the O-index
+## STEP 3: Calculate the O-index
 *
 
 # DISCLAIMER: Comparison of the O-index across fields
