@@ -33,11 +33,16 @@ The O index is calculated by  summing the total instances of openness, and  divi
 
 
 ## Future Directions: 
+* Some papers do not have full text on Pubmed, but have links to other open access sites. In the future code should be modified to see this, and use the link to the full access paper, and scrape text there. 
+
+* Add additional tools to check if stated shared data/code are real (e.g. check that the links work)
+
+* Promote this new metric, and hope that it motivated scientists to be more open about their work!
 
 ## Special Cosiderations:
 * Many people go thorugh the process of changing their first/last names thoughout their career. To address this, our application includes an option to search two names, and make an o-index out of papers from both those names. 
 
-# DISCLAIMERS: Comparison of the O-index across fields
+## DISCLAIMERS: Comparison of the O-index across fields
 * The O-index is defined by an equation that weights variables of code and data openness. If code is not relevant to a paper, the o-index is calculated without coding varibales considered, resulting in larger o-indices being created. Thus, it is not recommended to compater O-indices across fields.
 
-* There are cases where there are papers that are open access, but the full text cannot be found due to access barriers. In that case, the O-index will claim that the full text is available, but not have a count toward additional factors. This may inflate the index for specific papers. 
+* There are cases where there are papers that are open access, but the full text cannot be found due to our current method of scraping using PMIDs. In that case, the O-index will claim that the full text is available, but not have a count toward additional factors. This may inflate the index for specific papers. 
