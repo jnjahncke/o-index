@@ -27,21 +27,25 @@ Source code is available [on our github](https://github.com/jnjahncke/o-index/tr
 
 
 def server(input, output, session):
-    
-    @output
-    @render.table
+   
+    @reactive.Calc
     @reactive.event(lambda: input.go(), ignore_none=False)
-    def o_index_df():
+    def get_df():
         o_df = get_openness(input.author(), "apikey.txt")
         return o_df
+    
+
+    @output
+    @render.table
+    def o_index_df():
+        return get_df()
 
     @output
     @render.text
-    @reactive.event(lambda: input.go(), ignore_none=False)
     def o_index_float():
-        o_float = "x"
-        #o_float = oindex(o_index_df())
-        return f"o-index: {o_float}"
+        #o_float = "x"
+        o_float = oindex(get_df())
+        return f"o-index: {o_float:.3f}"
 
 
 app = App(app_ui, server)

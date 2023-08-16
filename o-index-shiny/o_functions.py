@@ -14,7 +14,8 @@ def get_pmcid_year(pmid):
     base_url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
     response = requests.get(base_url)
     soup = BeautifulSoup(response.content, 'html.parser')
-    date = soup.find_all('span', {'class' : 'cit'})[0].text.strip().split()[0]
+    date = soup.find_all('span', {'class' : 'cit'})[0].text.strip()
+    date = split("\D", date)[0]
     try:
         pmcid = soup.find_all('a', {'class' : 'id-link', 'data-ga-action' : 'PMCID'})[0].text.strip()
     except:
@@ -133,7 +134,14 @@ def get_openness(author, api):
                 break    
                 
     del o_idx_df['code_relevant']
+
+    o_idx_df.loc[:,'o-score'] = o_idx_df.mean(numeric_only=True, axis=1)
+
     return o_idx_df
+
+def oindex(df):
+    OIndex = df["o-score"].mean()
+    return OIndex
     
 
 def main():
