@@ -106,10 +106,10 @@ def get_openness(author, api):
         for i, categoryInd in enumerate (categories_unique):
             found_keyword = False
             # Loop through specific keywords related to each open-science category
-            for term in terms['keyword'][terms['category'] == categoryInd]:
+            for k,term in enumerate(terms['keyword'][terms['category'] == categoryInd]):
                 for s in finditer(term, out.text, IGNORECASE):
-                    o_idx_df.iloc[[j],[i]] = 1
-                    #o_idx_df.iloc[[j],[i]] = terms.loc[term]["weight"]
+                    #o_idx_df.iloc[[j],[i]] = 1
+                    o_idx_df.iloc[[j],[i]] = terms.loc[k]["weight"]
                     found_keyword = True
 
                 # If one keyword is found, stop with searching for this category
