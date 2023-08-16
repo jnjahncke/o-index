@@ -43,7 +43,7 @@ The O-index is calculated for each paper summing the total instances of openness
 
 2) Manuscript table: This table will include the catagory scores and an O-score for each paper an author has published, along with the papers PMID and year of publication
 
-3) Change in O-index over time: A plot of the O-index for given years of publications is shown for an author to see the change in their O-index across years.
+3) Change in O-score over time: A plot of the O-index for given years of publications is shown for an author to see the change in their O-index across years.
 
 ## Future Directions:
 
