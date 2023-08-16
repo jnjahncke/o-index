@@ -52,9 +52,10 @@ def server(input, output, session):
     @output
     @render.plot
     def plot_years():
-        ax = sns.barplot(data = get_df().sort_values(by ='year'), 
-                x= "year", y = "o-score", palette = "Blues")
-        ax.set(xlabel='Year', ylabel='O-Score', title='O-Score Over Time')
+        ax = sns.pointplot(data = get_df().sort_values(by ='year'), 
+                x= 'year', y= 'o-score', color='hotpink', errwidth=0.5)
+        ax.set(xlabel='', ylabel='O-Score', title='Yearly O-Score')
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=90)
         return ax
 
     @output
