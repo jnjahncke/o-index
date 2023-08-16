@@ -85,8 +85,9 @@ def get_openness(author, api):
     df_list = [0] * len(category_descriptions)
     pmcids = []
     for i, item in enumerate(ids): 
+        o_idx_df.loc[[i],['pmid']] = item
         if ids[item] == 'closed':
-            continue 
+            continue
         if ids[item] == 'open':
             o_idx_df.loc[[i],['full_text']] = 1
         else:
@@ -108,6 +109,7 @@ def get_openness(author, api):
             for term in terms['keyword'][terms['category'] == categoryInd]:
                 for s in finditer(term, out.text, IGNORECASE):
                     o_idx_df.iloc[[j],[i]] = 1
+                    #o_idx_df.iloc[[j],[i]] = terms.loc[term]["weight"]
                     found_keyword = True
 
                 # If one keyword is found, stop with searching for this category

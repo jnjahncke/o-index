@@ -9,10 +9,19 @@ import os
 from o_functions import *
 
 app_ui = ui.page_fluid(
-    ui.h2("o-index"),
+    ui.h2("Quantifying Open Access"),
+    ui.markdown('''
+### What is an o-index?
+An o-index is a metric to quantify the "openness" of a particular author's body of work. This app accepts an author's name and looks up the PMIDs associated with a PubMed search. It then scrapes any open access texts for keywords associated with data and/or code sharing. 
+
+### Get o-index:'''),
     ui.input_text("author", "Author: ", "Jennifer Jahncke"),
     ui.input_action_button("go","Calculate o-index"),
-    ui.output_table("o_index_df")
+    ui.output_table("o_index_df"),
+    ui.markdown('''
+### App Source Code
+Source code is available [on our github](https://github.com/jnjahncke/o-index/tree/main).
+    ''')
 )
 
 
