@@ -7,3 +7,4 @@ re
 numpy
 collections
 os
+seaborn
