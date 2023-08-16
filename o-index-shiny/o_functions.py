@@ -113,7 +113,6 @@ def get_openness(author, api):
             # Loop through specific keywords related to each open-science category
             for k,term in enumerate(terms['keyword'][terms['category'] == categoryInd]):
                 for s in finditer(term, out.text, IGNORECASE):
-                    #o_idx_df.iloc[[j],[i]] = 1
                     o_idx_df.iloc[[j],[i]] = terms.loc[k]["weight"]
                     found_keyword = True
 
