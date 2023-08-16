@@ -22,47 +22,49 @@ database,1,1,data
 deposit ,1,1,data
 deposited,1,1,data
 accession number,1,1,data
-datasets are available on request,2,0.5,data
-dataset is available on request,2,0.5,data
-datasets are available upon request,2,0.5,data
-dataset is available upon request,2,0.5,data
-data are available on request,2,0.5,data
-data are available upon request,2,0.5,data
-data is available on request,2,0.5,data
-data is available upon request,2,0.5,data
-data shared on request,2,0.5,data
-data shared upon request,2,0.5,data
-data will be shared on request,2,0.5,data
-data will be shared upon request,2,0.5,data
-bitbucket,3,1,code
-code is publicly available,3,1,code
-codes are publicly available,3,1,code
-code is available,3,1,code
-code is posted,3,1,code
-code is shared,3,1,code
-codes are uploaded,3,1,code
-codes are available,3,1,code
-codes are posted,3,1,code
-codes are shared,3,1,code
-codes is uploaded,3,1,code
-github,3,1,code
-jupyter,3,1,code
-open source,3,1,code
-open-source,3,1,code
-public repository,3,1,code
-python script available,3,1,code
-upload,3,1,code
-uploded,3,1,code
-software is available,3,1,code
-code is available on request,4,0.5,code
-code is available upon request,4,0.5,code
-codes are available on request,4,0.5,code
-codes are available upon request,4,0.5,code
-code shared on request,4,0.5,code
-code will be shared on request,4,0.5,code
-code will be shared upon request,4,0.5,code
-codes will be shared on request,4,0.5,code
-codes will be shared upon request,4,0.5,code
-code shared upon request,4,0.5,code
-data supporting this study,4,0.5,code
-Script will be shared upon request,4,0.5,code
+datasets are available on request,1,0.5,data
+dataset is available on request,1,0.5,data
+datasets are available upon request,1,0.5,data
+dataset is available upon request,1,0.5,data
+data are available on request,1,0.5,data
+data are available upon request,1,0.5,data
+data is available on request,1,0.5,data
+data is available upon request,1,0.5,data
+data shared on request,1,0.5,data
+data shared upon request,1,0.5,data
+data will be shared on request,1,0.5,data
+data will be shared upon request,1,0.5,data
+bitbucket,2,1,code
+code is publicly available,2,1,code
+codes are publicly available,2,1,code
+code is available,2,1,code
+code is posted,2,1,code
+code is shared,2,1,code
+codes are uploaded,2,1,code
+codes are available,2,1,code
+codes are posted,2,1,code
+codes are shared,2,1,code
+codes is uploaded,2,1,code
+github,2,1,code
+jupyter,2,1,code
+open source,2,1,code
+open-source,2,1,code
+public repository,2,1,code
+python script available,2,1,code
+upload,2,1,code
+uploded,2,1,code
+software is available,2,1,code
+code is available on request,2,0.5,code
+code is available upon request,2,0.5,code
+codes are available on request,2,0.5,code
+codes are available upon request,2,0.5,code
+code shared on request,2,0.5,code
+code will be shared on request,2,0.5,code
+code will be shared upon request,2,0.5,code
+codes will be shared on request,2,0.5,code
+codes will be shared upon request,2,0.5,code
+code shared upon request,2,0.5,code
+data supporting this study,2,0.5,code
+Script will be shared upon request,2,0.5,code
+upon reasonable request,1,0.5,data
+upon reasonable request,2,0.5,code
