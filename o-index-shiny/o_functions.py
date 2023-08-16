@@ -10,15 +10,17 @@ from re import *
 import os
 
 # Get PMCID from PMID
-def get_pmcid(pmid):
+def get_pmcid_year(pmid):
     base_url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
     response = requests.get(base_url)
     soup = BeautifulSoup(response.content, 'html.parser')
+    date = soup.find_all('span', {'class' : 'cit'})[0].text.strip().split()[0]
     try:
         pmcid = soup.find_all('a', {'class' : 'id-link', 'data-ga-action' : 'PMCID'})[0].text.strip()
     except:
         pmcid = None
-    return pmcid
+    return (pmcid , date)
+
 
 # Get PMIDs, Openness from author name
 def get_pmids_open(author):
@@ -53,9 +55,10 @@ def get_pmids_open(author):
     
     # build dictionary of id:pmcid
     ids = {}
+    years = {}
     for id,entry in zip(pmids,entries):
-        pmcid = get_pmcid(id.text.strip())
-        
+        pmcid, year = get_pmcid_year(id.text.strip())
+        years[id.text.strip()] = year
         if pmcid:
             ids[id.text.strip()] = pmcid
         elif search(r"Free",entry.text.strip()): # use regex to search for "Free" in docsum-content
@@ -63,10 +66,10 @@ def get_pmids_open(author):
         else:
             ids[id.text.strip()] = "closed"
         
-    return ids
+    return ids, years
 
 def get_openness(author, api):
-    ids = get_pmids_open(author)
+    ids, years = get_pmids_open(author)
     apikey = open(api, 'r').read()
     
     # Load keywords and create open-science categories
@@ -86,6 +89,7 @@ def get_openness(author, api):
     pmcids = []
     for i, item in enumerate(ids): 
         o_idx_df.loc[[i],['pmid']] = item
+        o_idx_df.loc[[i],['year']] = years[i]
         if ids[item] == 'closed':
             continue
         if ids[item] == 'open':
