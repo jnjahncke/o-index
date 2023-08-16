@@ -1,68 +1,68 @@
-keyword,category,pre-string,category_description
-data is publicly available,1,1,data_shared
-data are publicly available,1,1,data_shared
-data are available,1,1,data_shared
-data can be found,1,1,data_shared
-data is available,1,1,data_shared
-data are shared,1,1,data_shared
-data is shared,1,1,data_shared
-datalad,1,0,data_shared
-genbank,1,0,data_shared
-gene expression omnibus,1,0,data_shared
-modeldb,1,0,data_shared
-neurovault,1,0,data_shared
-openfmri,1,0,data_shared
-openneuro,1,0,data_shared
-pumadb,1,0,data_shared
-sequence read archive,1,0,data_shared
-data supporting this study are available from,1,,data_shared
-data have been deposited,1,,data_shared
-data are deposited,1,,data_shared
-database,1,,data_shared
-deposit ,1,,data_shared
-deposited,1,,data_shared
-accession number,1,,data_shared
-datasets are available on request,2,,data_upon_request
-dataset is available on request,2,,data_upon_request
-datasets are available upon request,2,,data_upon_request
-dataset is available upon request,2,,data_upon_request
-data are available on request,2,0,data_upon_request
-data are available upon request,2,0,data_upon_request
-data is available on request,2,0,data_upon_request
-data is available upon request,2,0,data_upon_request
-data shared on request,2,0,data_upon_request
-data shared upon request,2,0,data_upon_request
-data will be shared on request,2,0,data_upon_request
-data will be shared upon request,2,0,data_upon_request
-bitbucket,3,0,code_shared
-code is publicly available,3,0,code_shared
-codes are publicly available,3,0,code_shared
-code is available,3,1,code_shared
-code is posted,3,1,code_shared
-code is shared,3,1,code_shared
-codes are uploaded,3,1,code_shared
-codes are available,3,1,code_shared
-codes are posted,3,1,code_shared
-codes are shared,3,1,code_shared
-codes is uploaded,3,1,code_shared
-github,3,0,code_shared
-jupyter,3,0,code_shared
-open source,3,0,code_shared
-open-source,3,0,code_shared
-public repository,3,0,code_shared
-python script available,3,0,code_shared
-upload,3,,code_shared
-uploded,3,,code_shared
-software is available,3,1,code_shared
-code is available on request,4,0,code_upon_request
-code is available upon request,4,0,code_upon_request
-codes are available on request,4,0,code_upon_request
-codes are available upon request,4,0,code_upon_request
-code shared on request,4,0,code_upon_request
-code will be shared on request,4,0,code_upon_request
-code will be shared upon request,4,0,code_upon_request
-codes will be shared on request,4,0,code_upon_request
-codes will be shared upon request,4,0,code_upon_request
-code shared upon request,4,0,code_upon_request
-data supporting this study,4,,code_upon_request
-Script will be shared upon request,4,,code_upon_request
+keyword,category,category_description
+data is publicly available,1,data_shared
+data are publicly available,1,data_shared
+data are available,1,data_shared
+data can be found,1,data_shared
+data is available,1,data_shared
+data are shared,1,data_shared
+data is shared,1,data_shared
+datalad,1,data_shared
+genbank,1,data_shared
+gene expression omnibus,1,data_shared
+modeldb,1,data_shared
+neurovault,1,data_shared
+openfmri,1,data_shared
+openneuro,1,data_shared
+pumadb,1,data_shared
+sequence read archive,1,data_shared
+data supporting this study are available from,1,data_shared
+data have been deposited,1,data_shared
+data are deposited,1,data_shared
+database,1,data_shared
+deposit ,1,data_shared
+deposited,1,data_shared
+accession number,1,data_shared
+datasets are available on request,2,data_upon_request
+dataset is available on request,2,data_upon_request
+datasets are available upon request,2,data_upon_request
+dataset is available upon request,2,data_upon_request
+data are available on request,2,data_upon_request
+data are available upon request,2,data_upon_request
+data is available on request,2,data_upon_request
+data is available upon request,2,data_upon_request
+data shared on request,2,data_upon_request
+data shared upon request,2,data_upon_request
+data will be shared on request,2,data_upon_request
+data will be shared upon request,2,data_upon_request
+bitbucket,3,code_shared
+code is publicly available,3,code_shared
+codes are publicly available,3,code_shared
+code is available,3,code_shared
+code is posted,3,code_shared
+code is shared,3,code_shared
+codes are uploaded,3,code_shared
+codes are available,3,code_shared
+codes are posted,3,code_shared
+codes are shared,3,code_shared
+codes is uploaded,3,code_shared
+github,3,code_shared
+jupyter,3,code_shared
+open source,3,code_shared
+open-source,3,code_shared
+public repository,3,code_shared
+python script available,3,code_shared
+upload,3,code_shared
+uploded,3,code_shared
+software is available,3,code_shared
+code is available on request,4,code_upon_request
+code is available upon request,4,code_upon_request
+codes are available on request,4,code_upon_request
+codes are available upon request,4,code_upon_request
+code shared on request,4,code_upon_request
+code will be shared on request,4,code_upon_request
+code will be shared upon request,4,code_upon_request
+codes will be shared on request,4,code_upon_request
+codes will be shared upon request,4,code_upon_request
+code shared upon request,4,code_upon_request
+data supporting this study,4,code_upon_request
+Script will be shared upon request,4,code_upon_request
