@@ -1,8 +1,10 @@
 # O-index
 
-This project started in Neurohackademy, Seattle in August 2023 (http://neurohackademy.org/). The goal of this project is to create an automated interface where you can type a name, and be given an o-index.
+This project started in Neurohackademy, Seattle in August 2023 (http://neurohackademy.org/). The goal of this project is to create an automated interface where you can type a name, and be given an o-index. 
 
 * An o-index is a comrehensive rating of how open a scientist is with their publications. This mimics the h-index, but weights the scientist on if they have open source articles, share code, etc.
+
+This project was initially inspired by a past project, the O-factor: https://github.com/srcole/o-factor, which gives journals an openness factor, in attempt to inspire open access initiatives.
 
 # Contributors (ABC order):
 
@@ -67,4 +69,3 @@ The O-index is calculated for each paper summing the total instances of openness
 * The O-index is defined by an equation that weights variables of code and data openness. If code is not relevant to a paper, the o-index is calculated without coding varibales considered, resulting in larger o-indices being created. Thus, it is not recommended to compater O-indices across fields.
 
 * There are cases where there are papers that are open access, but the full text cannot be found due to our current method of scraping using PMIDs. In that case, the O-index will claim that the full text is available, but not have a count toward additional factors. This may inflate the index for specific papers. 
-
