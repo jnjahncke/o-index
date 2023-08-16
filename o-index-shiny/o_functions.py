@@ -30,7 +30,7 @@ def get_pmids_open(author):
     if len(author) > 1:
         aname = author[0]
         for name in author[1:]:
-            aname += "%" + name
+            aname += "+" + name
     else:
         aname = author[0]
         
