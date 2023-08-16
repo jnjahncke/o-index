@@ -72,55 +72,69 @@ def get_openness(author, api):
     ids, years = get_pmids_open(author)
     
     apikey = open(api, 'r').read()
-    
+
     # Load keywords and create open-science categories
-    terms = pd.read_csv('keywords.csv')
-    categories = terms['category']
-    category_descriptions = terms['category_description']
-    categories_unique = np.unique(np.array(categories))
+    keyword_df = pd.read_csv('keywords.csv')
+    categoryIDs = np.unique(np.array(keyword_df['category']))
+    category_descriptions = keyword_df['category_description']
     category_descriptions = category_descriptions.unique().tolist()
     full_text = 'full_text'
     category_descriptions.append(full_text)
     
     #create df with all the unique categories:
     data = (len(ids), len(category_descriptions))
+
+    #data = (len(ids), len(category_descriptions))
     o_idx_df = pd.DataFrame(np.zeros(data), columns = category_descriptions)
-    
-    df_list = [0] * len(category_descriptions)
+    #deleting the 'code relevant column from the final df
     pmcids = []
     for i, item in enumerate(ids): 
         o_idx_df.loc[[i],['pmid']] = item
         o_idx_df.loc[[i],['year']] = years[item]
         if ids[item] == 'closed':
+            pmcids.append(None)
+            #if PMCID is unavailable make items in df None type
+            o_idx_df.iloc[[i],0:2] = None
             continue
         if ids[item] == 'open':
+            pmcids.append(None)
             o_idx_df.loc[[i],['full_text']] = 1
+            o_idx_df.iloc[[i],0:2] = None
+
         else:
             pmcids.append(ids[item])
             o_idx_df.loc[[i],['full_text']] = 1
-            
     db = 'pmc'
     base = 'http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?'
-    dict_term = defaultdict(list)
-    fulfilled_categories = [0] * len(categories_unique)
     for j, pmcid in enumerate(pmcids):
+        if pmcid == None:
+            continue
         s = '{:s}db={:s}&id={:s}'.format(base, db, pmcid, apikey)
         out = requests.get(s)
         bs = BeautifulSoup(out.content, features="xml")
         # Check if full text is available; if not - move to the next paper
-        for i, categoryInd in enumerate (categories_unique):
+        for cat in categoryIDs:
             found_keyword = False
             # Loop through specific keywords related to each open-science category
-            for k,term in enumerate(terms['keyword'][terms['category'] == categoryInd]):
-                for s in finditer(term, out.text, IGNORECASE):
-                    o_idx_df.iloc[[j],[i]] = terms.loc[k]["weight"]
+            for k, keyword in enumerate(keyword_df['keyword'][keyword_df['category'] == cat]):
+                for s in finditer(keyword, out.text, IGNORECASE):
+                    #if we are on cat "code relevant" (cat 3) we are testing to see if code is relevant for this paper
+                    o_idx_df.iloc[[j],[cat-1]] = keyword_df.loc[k]["weight"]
                     found_keyword = True
 
                 # If one keyword is found, stop with searching for this category
                 if found_keyword is True:
                     break
-    
+            #if code category is 0, check to see if code is relevant
+            if cat == 2 and found_keyword== True:
+                break 
+            if cat == 3 and found_keyword == False:
+                o_idx_df.iloc[[j],[cat-2]] = None
+                break    
+                
+    del o_idx_df['code_relevant']
     return o_idx_df
+    
 
 def main():
 
