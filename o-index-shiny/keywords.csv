@@ -22,8 +22,6 @@ database,1,1,data
 deposit ,1,1,data
 deposited,1,1,data
 accession number,1,1,data
-on reasonable request,3,0.5,data
-upon reasonable request,1,0.5,data
 datasets are available on request,1,0.5,data
 dataset is available on request,1,0.5,data
 datasets are available upon request,1,0.5,data
@@ -68,8 +66,6 @@ codes will be shared upon request,2,0.5,code
 code shared upon request,2,0.5,code
 data supporting this study,2,0.5,code
 Script will be shared upon request,2,0.5,code
-upon reasonable request,2,0.5,code
-on reasonable request,2,0.5,code
 bash script,3,0,code_relevant
 MATLAB,3,0,code_relevant
 package in R,3,0,code_relevant
