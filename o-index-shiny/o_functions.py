@@ -30,7 +30,7 @@ def get_pmids_open(author):
     if len(author) > 1:
         aname = author[0]
         for name in author[1:]:
-            aname += "+" + name
+            aname += "%" + name
     else:
         aname = author[0]
         
@@ -70,6 +70,7 @@ def get_pmids_open(author):
 
 def get_openness(author, api):
     ids, years = get_pmids_open(author)
+    
     apikey = open(api, 'r').read()
     
     # Load keywords and create open-science categories
@@ -89,7 +90,7 @@ def get_openness(author, api):
     pmcids = []
     for i, item in enumerate(ids): 
         o_idx_df.loc[[i],['pmid']] = item
-        o_idx_df.loc[[i],['year']] = years[i]
+        o_idx_df.loc[[i],['year']] = years[item]
         if ids[item] == 'closed':
             continue
         if ids[item] == 'open':
