@@ -1,0 +1,9 @@
+shiny
+jinja2
+pandas
+lxml
+bs4
+re
+numpy
+collections
+os
