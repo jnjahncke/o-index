@@ -26,7 +26,7 @@ An o-index, or openness index, is a metric to quantify the "openness" of a parti
     ui.row(ui.p("."))),
 
     ui.row(
-        ui.column(4, ui.output_table("o_index_df")),
+        ui.column(8, ui.output_table("o_index_df")),
         ui.column(4, ui.output_plot("plot_years"))),
 
     ui.div(ui.markdown('''
