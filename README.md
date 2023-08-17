@@ -41,9 +41,9 @@ The O-index is calculated for each paper summing the total instances of openness
 ## STEP 4: Data visualization and meaning:
 1) Overall O-index: An O-index for the author will be displayed at the top of the GUI. This number averages the O-index for all papers the author is associated with.
 
-2) Manuscript table: This table will include the catagory scores and an O-index for each paper an author has published, along with the papers PMID and year of publication
+2) Manuscript table: This table will include the catagory scores and an O-score for each paper an author has published, along with the papers PMID and year of publication
 
-3) Change in O-index over time: A plot of the O-index for given years of publications is shown for an author to see the change in their O-index across years.
+3) Change in O-score over time: A plot of the O-index for given years of publications is shown for an author to see the change in their O-index across years.
 
 ## Future Directions:
 
