@@ -1,4 +1,6 @@
-# O-index
+# O-index: 
+
+You can calculate your O-index online at https://tinyurl.com/3ens93fz - yay!
 
 This project started in Neurohackademy, Seattle in August 2023 (http://neurohackademy.org/). The goal of this project is to create an automated interface where you can type an author name, and be given an o-index. 
 
@@ -66,6 +68,6 @@ An O-score is calculated for each paper summing the total instances of openness,
 
 ## Disclaimers:
 
-* The O-index is defined by an equation that weights variables of code and data openness for an authors published work. If code is not relevant to a paper, the o-index is calculated without coding varibales considered, resulting in differently weighted o-indices being created. Thus, it is not recommended to compater O-indices across fields.
+* The O-index is defined by an equation that weights variables of code and data openness for an authors published work. If code is not relevant to a paper, the o-index is calculated without coding varibales considered, resulting in differently weighted o-indices being created. Thus, it is not recommended to compare O-indices across fields.
 
 * There are cases where there are papers that are open access, but the full text cannot be found due to our current method of scraping using PMIDs. In that case, the O-index will claim that the full text is available, but not have a count toward additional factors. This may inflate the index for specific papers. 
