@@ -32,9 +32,9 @@ Each paper an author is listed under is then scraped to determine how open sourc
    * full text availability :
        * is the text publically avaiable, or does it have pay barriers
        
-If a predefined phrase for each catagory (see keywords.csv) is seen in the manuscript text, the catagory is given a binary value. Values were weighted based on openness, with publically shared data/code recieving a value of 1, and requested data/code recieving a value of 0.5.
+If a predefined phrase for each catagory (see keywords.csv) is seen in the manuscript text, the catagory is given a binary value. Values were weighted based on openness, with publically shared data/code recieving a value of 1, and requested data/code recieving a value of 0.5. If code is not relevant to a paper, the category will recieve a NaN scoring, and will not be counted toward the final O-score of that paper.
 
-If code is not relevant to the paper, the O-index calculation will detect this and add an NaN to the code column. This will allow it to not impact the final O-index score for a paper. ADD NAN STUFF HERE!!!!!
+Papers that are not open and papers that are open but do not have a PMCID, and are therefore unable to be scraped, will recieve NaNs for both code and data sharing sections. 
    
 ## STEP 3: Calculate the O-index:
 
@@ -66,6 +66,6 @@ An O-score is calculated for each paper summing the total instances of openness,
 
 ## Disclaimers:
 
-* The O-index is defined by an equation that weights variables of code and data openness for an authors . If code is not relevant to a paper, the o-index is calculated without coding varibales considered, resulting in differently weighted o-indices being created. Thus, it is not recommended to compater O-indices across fields.
+* The O-index is defined by an equation that weights variables of code and data openness for an authors published work. If code is not relevant to a paper, the o-index is calculated without coding varibales considered, resulting in differently weighted o-indices being created. Thus, it is not recommended to compater O-indices across fields.
 
 * There are cases where there are papers that are open access, but the full text cannot be found due to our current method of scraping using PMIDs. In that case, the O-index will claim that the full text is available, but not have a count toward additional factors. This may inflate the index for specific papers. 
