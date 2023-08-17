@@ -45,14 +45,16 @@ def get_pmids_open(author):
     # scrape pubmed
     pmids = []
     entries = []
+    titles = []
+    journals = []
     for i in range(1,pagenum+1): #change # into max num of pages
         URL = f'https://pubmed.ncbi.nlm.nih.gov/?term={aname}&page={i}'
         response = requests.get(URL)
         soup = BeautifulSoup(response.content, 'html.parser')
-        pmids = soup.find_all('span', {'class' : 'docsum-pmid'})
-        entries = soup.find_all("div", {'class' : 'docsum-content'})
-        titles = soup.find_all("a", {'class' : 'docsum-title'})
-        journals = soup.find_all("span", {'class' : 'docsum-journal-citation short-journal-citation'})
+        pmids += soup.find_all('span', {'class' : 'docsum-pmid'})
+        entries += soup.find_all("div", {'class' : 'docsum-content'})
+        titles += soup.find_all("a", {'class' : 'docsum-title'})
+        journals += soup.find_all("span", {'class' : 'docsum-journal-citation short-journal-citation'})
     
     # build dictionary of id:pmcid
     ids = {}
