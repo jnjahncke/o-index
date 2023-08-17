@@ -3,7 +3,6 @@
 from shiny import *
 import numpy as np
 import pandas as pd
-
 import requests
 from bs4 import BeautifulSoup
 from re import *
@@ -13,21 +12,27 @@ import seaborn as sns
 app_ui = ui.page_fluid(
     ui.h2("Quantifying Open Access"),
 
-    ui.div(ui.markdown('''
+    ui.div(ui.column(8, ui.markdown('''
 ### What is an o-index?
 An o-index, or openness index, is a metric to quantify the "openness" of a particular author's body of work. This app accepts an author's name and looks up the PMIDs associated with a PubMed search. It then scrapes any open access texts for keywords associated with data and/or code sharing. An "o-score" is assigned to each individual paper and the average of all o-scores is an author's o-index. 
-
-### Get o-index:'''),
-    ui.input_text("author", "Author: ", "Jennifer Jahncke"),
-    ui.input_action_button("go","Calculate o-index"),
-    
-    ui.row(ui.p(".")),
-    ui.row(ui.output_text("o_index_float")),
-    ui.row(ui.p("."))),
+'''))),
 
     ui.row(
-        ui.column(8, ui.output_table("o_index_df")),
-        ui.column(4, ui.output_plot("plot_years"))),
+        ui.column(2, 
+            ui.row(
+                ui.markdown("### Get o-index"),
+                ui.input_text("author", "Author: ", "Jennifer Jahncke"),
+                ui.input_action_button("go", "Calculate o-index")),
+
+            ui.row(ui.p(".")),
+            ui.row(ui.output_text("o_index_float")),
+            ui.row(ui.p("."))),
+        ui.column(6, ui.output_plot("plot_years"))
+        ),
+
+
+    ui.div(
+        ui.column(8, ui.output_table("o_index_df"))),
 
     ui.div(ui.markdown('''
 ### App Source Code
