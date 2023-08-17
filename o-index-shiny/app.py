@@ -67,7 +67,6 @@ def server(input, output, session):
     @output
     @render.text
     def o_index_float():
-        #o_float = "x"
         o_float = oindex(get_df())
         return f"o-index: {o_float:.3f}"
 
