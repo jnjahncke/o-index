@@ -1,6 +1,6 @@
 # O-index: 
 
-You can calculate your O-index online at https://tinyurl.com/3ens93fz - yay!
+You can calculate your O-index online at https://tinyurl.com/o-index - yay!
 
 This project started in Neurohackademy, Seattle in August 2023 (http://neurohackademy.org/). The goal of this project is to create an automated interface where you can type an author name, and be given an o-index. 
 
