@@ -2,12 +2,10 @@
 
 import numpy as np
 import pandas as pd
-from collections import defaultdict
 
 import requests
 from bs4 import BeautifulSoup
 from re import *
-import os
 
 # Get PMCID from PMID
 def get_pmcid_year(pmid):

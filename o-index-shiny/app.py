@@ -7,7 +7,6 @@ import pandas as pd
 import requests
 from bs4 import BeautifulSoup
 from re import *
-import os
 from o_functions import *
 import seaborn as sns
 
