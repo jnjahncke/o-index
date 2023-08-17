@@ -49,26 +49,33 @@ def get_pmids_open(author):
         URL = f'https://pubmed.ncbi.nlm.nih.gov/?term={aname}&page={i}'
         response = requests.get(URL)
         soup = BeautifulSoup(response.content, 'html.parser')
-        pmids += soup.find_all('span', {'class' : 'docsum-pmid'})
-        entries += soup.find_all("div", class_='docsum-content')
+        pmids = soup.find_all('span', {'class' : 'docsum-pmid'})
+        entries = soup.find_all("div", {'class' : 'docsum-content'})
+        titles = soup.find_all("a", {'class' : 'docsum-title'})
+        journals = soup.find_all("span", {'class' : 'docsum-journal-citation short-journal-citation'})
     
     # build dictionary of id:pmcid
     ids = {}
     years = {}
-    for id,entry in zip(pmids,entries):
-        pmcid, year = get_pmcid_year(id.text.strip())
-        years[id.text.strip()] = year
+    title_dict = {}
+    journal_dict = {}
+    for id,entry,title,journal in zip(pmids,entries,titles,journals):
+        id = id.text.strip()
+        pmcid, year = get_pmcid_year(id)
+        years[id] = year
+        title_dict[id] = title.text.strip()
+        journal_dict[id] = split("\d", journal.text.strip())[0].strip()
         if pmcid:
-            ids[id.text.strip()] = pmcid
+            ids[id] = pmcid
         elif search(r"Free",entry.text.strip()): # use regex to search for "Free" in docsum-content
-            ids[id.text.strip()] = "open"
+            ids[id] = "open"
         else:
-            ids[id.text.strip()] = "closed"
+            ids[id] = "closed"
         
-    return ids, years
+    return ids, years, title_dict, journal_dict
 
 def get_openness(author, api):
-    ids, years = get_pmids_open(author)
+    ids, years, titles, journals = get_pmids_open(author)
     
     apikey = open(api, 'r').read()
 
@@ -90,6 +97,8 @@ def get_openness(author, api):
     for i, item in enumerate(ids): 
         o_idx_df.loc[[i],['pmid']] = item
         o_idx_df.loc[[i],['year']] = years[item]
+        o_idx_df.loc[[i],['journal']] = journals[item]
+        o_idx_df.loc[[i],['title']] = titles[item]
         if ids[item] == 'closed':
             pmcids.append(None)
             #if PMCID is unavailable make items in df None type
