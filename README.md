@@ -1,7 +1,5 @@
 # O-index: 
 
-You can calculate your O-index online at https://tinyurl.com/o-index - yay!
-
 This project started in Neurohackademy, Seattle in August 2023 (http://neurohackademy.org/). The goal of this project is to create an automated interface where you can type an author name, and be given an o-index. 
 
 * An o-index is a comrehensive rating of how open a scientist is with their publications. This index is created by weighing openness of both data, code, and manuscript availability.
@@ -43,6 +41,7 @@ Papers that are not open and papers that are open but do not have a PMCID, and a
 An O-score is calculated for each paper summing the total instances of openness, and dividing by the total number of catagories. O-score across papers were averaged to obtain an O-index for a specific author.
 
 ## STEP 4: Data visualization and meaning:
+
 1) Overall O-index: An O-index for the author will be displayed at the top of the GUI. This number averages the O-score for all papers the author is associated with. An O-index can range between 0 and 1, with higher numbers showing an author is more 'open'.
 
 2) Manuscript table: This table will include the catagory scores and an O-score for each paper an author has published, along with the papers PMID and year of publication.
